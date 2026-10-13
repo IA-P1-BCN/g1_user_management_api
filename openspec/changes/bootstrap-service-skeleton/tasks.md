@@ -16,13 +16,13 @@
 ## 3. Base de datos y contrato (sub-issue #33)
 
 - [x] 3.1 Crear `src/database.py` (engine async con `pool_pre_ping`, `async_sessionmaker`, `get_db`) y verificar con test que `get_db` entrega una sesión (stub) y la cierra
-- [ ] 3.2 Crear `api/openapi.yaml` con `/health` y `/ready` (spec-first) y verificar que el YAML parsea y describe ambos endpoints
+- [x] 3.2 Crear `api/openapi.yaml` con `/health` y `/ready` (spec-first) y verificar que el YAML parsea y describe ambos endpoints
 
 ## 4. CI y entrega (sub-issue #34)
 
-- [ ] 4.1 Crear `.env.example` (SECRET_KEY, DATABASE_URL) y asegurar `.env` en `.gitignore`; verificar que `git status` no muestra `.env`
-- [ ] 4.2 Crear `.github/workflows/ci.yml` (uv sync --locked → `task lint` → `task test` en cada PR) y verificar que el YAML parsea
-- [ ] 4.3 Crear `.pre-commit-config.yaml` (ruff) y verificar `uv run pre-commit run --all-files` en verde
+- [x] 4.1 Crear `.env.example` (SECRET_KEY, DATABASE_URL) y asegurar `.env` en `.gitignore`; verificar que `git status` no muestra `.env`
+- [x] 4.2 Crear `.github/workflows/ci.yml` (uv sync --locked → `task lint` → `task test` en cada PR) y verificar que el YAML parsea
+- [x] 4.3 Crear `.pre-commit-config.yaml` (ruff) y verificar `uv run pre-commit run --all-files` en verde
 
 ## 5. Integración final
 

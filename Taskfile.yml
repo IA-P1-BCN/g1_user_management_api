@@ -1,0 +1,29 @@
+version: "3"
+
+tasks:
+  install:
+    desc: Install dependencies from the lockfile
+    cmds:
+      - uv sync --locked
+
+  dev:
+    desc: Run the dev server with reload
+    cmds:
+      - uv run uvicorn src.main:app --reload
+
+  test:
+    desc: Run the test suite
+    cmds:
+      - uv run pytest
+
+  lint:
+    desc: Ruff lint + format check
+    cmds:
+      - uv run ruff check .
+      - uv run ruff format --check .
+
+  format:
+    desc: Apply ruff fixes and formatting
+    cmds:
+      - uv run ruff check --fix .
+      - uv run ruff format .

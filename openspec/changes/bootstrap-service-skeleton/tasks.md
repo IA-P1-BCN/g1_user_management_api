@@ -2,9 +2,9 @@
 
 ## 1. Proyecto y tooling (sub-issue #31)
 
-- [ ] 1.1 Inicializar el proyecto uv (`pyproject.toml`, `.python-version`, `uv.lock`) con las dependencias del proposal y verificar que `uv sync --locked` instala el entorno
-- [ ] 1.2 Crear `Taskfile.yml` con `install`/`dev`/`test`/`lint` y verificar que `task lint` y `task test` se ejecutan
-- [ ] 1.3 Configurar ruff en `pyproject.toml` (reglas E/W/B, línea 100, formato) y verificar `task lint` en verde sobre el código existente
+- [x] 1.1 Inicializar el proyecto uv (`pyproject.toml`, `.python-version`, `uv.lock`) con las dependencias del proposal y verificar que `uv sync --locked` instala el entorno
+- [x] 1.2 Crear `Taskfile.yml` con `install`/`dev`/`test`/`lint` y verificar que `task lint` y `task test` se ejecutan
+- [x] 1.3 Configurar ruff en `pyproject.toml` (reglas E/W/B, línea 100, formato) y verificar `task lint` en verde sobre el código existente
 
 ## 2. Aplicación FastAPI (sub-issue #32; config de #33)
 

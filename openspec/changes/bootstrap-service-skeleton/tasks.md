@@ -26,8 +26,8 @@
 
 ## 5. Integración final
 
-- [ ] 5.1 Ejecutar `task lint` + `task test` en verde y `openspec validate bootstrap-service-skeleton` sin errores
-- [ ] 5.2 Arrancar `task dev` y verificar manualmente `/health`, `/ready`, `/docs`, `/redoc`; registrar el resultado en la PR
+- [x] 5.1 Ejecutar `task lint` + `task test` en verde y `openspec validate bootstrap-service-skeleton` sin errores
+- [x] 5.2 Arrancar `task dev` y verificar manualmente `/health`, `/ready`, `/docs`, `/redoc`; registrar el resultado en la PR
 
 ## Workflow follow-up
 

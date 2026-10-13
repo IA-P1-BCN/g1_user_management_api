@@ -8,6 +8,20 @@
 
 This file is an **index only** — each section maps to a folder under `docs/`; open the linked doc for the rules that apply to your task (progressive disclosure). Doc zones: `docs/business/` (project + client), `docs/dev/` (engineering conventions), `docs/prompts/` (reusable prompts).
 
+## Folder Structure
+├── src/
+│   ├── main.py            # FastAPI app + lifespan
+│   ├── config.py          # Settings (pydantic-settings)
+│   ├── database.py        # async engine + session factory + get_db
+│   ├── logging_config.py  # JSON logging
+│   └── <domain>/          # router.py · schemas.py · models.py · service.py
+├── api/
+│   └── openapi.yaml       # spec-first contract
+├── openspec/              # living spec: changes/ (proposals) + specs/ (archived)
+├── tests/
+├── Taskfile.yml · pyproject.toml · uv.lock
+└── README.md
+
 ## Working rules
 
 From the client spec — non-negotiable:
@@ -15,6 +29,7 @@ From the client spec — non-negotiable:
 - One Kanban task = one agent session = one branch = one PR; **human review before merge**
 - **Tests are the contract**: leave tests passing; fix code, never delete tests
 - **Specs before code** (SDD, OpenSpec): no implementation before the spec change is approved
+- **Vertical slices**: every story delivers thin end-to-end functionality (endpoint → service → repository → model → tests) that can ship, test, and demo on its own — never horizontal "layer" stories
 
 ## Stack
 
@@ -56,6 +71,7 @@ Single-context: one `GLOSSARY.md` and `docs/adr/` at the repo root. See `docs/de
 See `docs/dev/git/CONVENTIONS.md`.
 
 - **Conventional Commits v1.0** are mandatory (`feat`/`fix`/`perf`/… — the changelog parses them)
+- **Conventional branches**: `<type>/<story-number>-<slug>` (e.g. `feat/1-bootstrap-service-skeleton`, `fix/12-alembic-migrations`); one branch per story = one PR
 - `main` is protected: PR + **1 approval**, no direct pushes
 - `CHANGELOG.md` is auto-generated on merge to `main` (git-cliff) — never hand-edit it
 

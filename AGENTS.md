@@ -96,7 +96,7 @@ See `docs/dev/deployment/docker/CONVENTIONS.md` — multi-stage, non-root, healt
 
 See `docs/dev/workflow/CONVENTIONS.md` and `docs/dev/workflow/CI_CD.md`.
 
-- **SDD with OpenSpec**: no implementation before the spec change is approved; **one story = one `openspec/changes/<id>/` folder**; the spec is the behavioral source of truth — if board and spec disagree, trust the spec
+- **SDD with OpenSpec**: no implementation before the spec change is approved; **one story = one `openspec/changes/<id>/` folder**; `openspec archive` (deltas → `openspec/specs/`) runs on the story branch and travels in the same PR — never a standalone archive PR; the spec is the behavioral source of truth — if board and spec disagree, trust the spec
 - **GitHub Project board** (Scrum): epic → milestone, story → `story` label, subtask → `task` label (only independently shippable pieces); columns Backlog / Sprint Backlog / In Review / Testing / Blocked / Ready for Deployment / Hell / Done; stories carry concise ACs + a spec link, never full Given/When/Then detail
 - CI gates on every PR: ruff, mypy, pytest ≥ 80% coverage, pip-audit, openspec validate, OpenAPI contract check (spectral + oasdiff)
 
